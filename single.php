@@ -59,7 +59,7 @@ get_header();
 										<h2>Sidor</h2>
 										<?php
 										$sidorArray = [
-											'theme_location' => 'bloggsidesidor'
+											'theme_location' => 'blogsidepage'
 										];
 										/* Shows sidebar */
 										wp_nav_menu($sidorArray);
@@ -69,7 +69,7 @@ get_header();
 										<h2>Arkiv</h2>
 										<?php
 										$arkivArray = [
-											'theme_location' => 'bloggsidearkiv'
+											'theme_location' => 'blogsidearchive'
 										];
 										/* Shows archive menu */
 										wp_nav_menu($arkivArray);
@@ -79,7 +79,7 @@ get_header();
 										<h2>Kategorier</h2>
 										<?php
 										$categoryArray = [
-											'theme_location' => 'bloggsidekategorier'
+											'theme_location' => 'blogsidearchive'
 										];
 										/* Shows category menu */
 										wp_nav_menu($categoryArray);

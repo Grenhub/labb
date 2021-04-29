@@ -1,29 +1,30 @@
+  
 <?php
+/* läser in header.php */
 get_header();
 ?>
 		<section>
 				<div class="container">
 					<div class="row">
 						<div id="primary" class="col-xs-12 col-md-9">
-							<h1>Arkiv</h1>
+							<h1>Author</h1>
                             <?php
-							/* Loops all the posts */
+							/* Loops all posts */
                             while( have_posts()){
 								/* Retrieves a post and simultaneously removes it from the list */
                                 the_post();
                             ?>
 							<article>
-								<img src="<?php  the_post_thumbnail_url(); ?>" alt="">
+								<img src="
+                                <?php 
+                                /* Show thumbnail */ 
+                                the_post_thumbnail_url(); 
+                                ?>" alt="">
 								<h2>
-									<a id="titlePost" href="
-									<?php
-									/* Link to post url */  
-									the_permalink_rss(); 
-									?>">
+									<a id="titlePost" href="<?php  the_permalink_rss(); ?>">
 									<?php 
-									/* Gets title */
+									/* Show title */
 									the_title(); 
-									
 									?> 
 									</a>
 									
@@ -40,14 +41,19 @@ get_header();
 									</li>
 								</ul>
 								<?php 
-								/* Gets the text */
-								the_excerpt();  
-								?>
+                                the_excerpt();  
+                                ?>
 							</article>
                             <?php
-							/* Ends loop */
                             }
                             ?>
+							<nav class="navigation pagination">
+								<h2 class="screen-reader-text">Inläggsnavigering</h2>
+								<a class="prev page-numbers" href="">Föregående</a>
+								<span class="page-numbers current">1</span>
+								<a class="page-numbers" href="">2</a>
+								<a class="next page-numbers" href="">Nästa</a>
+							</nav>
 						</div>
 						<aside id="secondary" class="col-xs-12 col-md-3">
 							<div id="sidebar">
@@ -56,7 +62,7 @@ get_header();
 										<form id="searchform" class="searchform">
 											<div>
 											<?php
-											/* Shows search bar */
+                                            /* Gets search bar */
 											get_search_form();
 											?>
 											</div>
@@ -70,7 +76,7 @@ get_header();
 										$sidorArray = [
 											'theme_location' => 'blogsidepage'
 										];
-										/* Show sidebar */
+										/* Shows sidebar */
 										wp_nav_menu($sidorArray);
 										?>
 									</li>
@@ -101,6 +107,5 @@ get_header();
 				</div>
 			</section>
             <?php
-			/* Gets footer.php */
             get_footer();
             ?>
