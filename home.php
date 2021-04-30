@@ -109,7 +109,7 @@ get_header();
 										<h2>Kategorier</h2>
 										<?php
 										$categoryArray = [
-											'theme_location' => 'blogsidearchive'
+											'theme_location' => 'blogsidecategory'
 										];
 										/* Shows category menu */
 										wp_nav_menu($categoryArray);
